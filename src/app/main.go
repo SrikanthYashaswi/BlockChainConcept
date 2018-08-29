@@ -22,10 +22,10 @@ func initBook(book *Book, name string) {
 }
 
 func genesis(book *Book) {
-	book.head = pay(0, 0, 0)
+	book.head = pays(0, 0, 0, nil)
 
 }
 
-func pay(from int32, to int32, amount float32) *Transaction {
-	return &Transaction{from, to, amount, nil}
+func pays(from int32, to int32, amount float32, next *Transaction) *Transaction {
+	return &Transaction{from, to, amount, next}
 }
